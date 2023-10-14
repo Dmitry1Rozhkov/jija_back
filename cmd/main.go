@@ -45,7 +45,7 @@ func main() {
 	}
 
 	fmt.Println(len(atmsData.Atms), len(offices))
-	fmt.Println(len(atmsData.Atms), offices)
+	//fmt.Println(len(atmsData.Atms), offices)
 	// init handler
 	handlers := handler.New(appConfig, atmsData.Atms, offices)
 
