@@ -1,0 +1,8 @@
+isDebug: true
+corsOrigins: [ "*" ]
+http:
+  host: 192.168.0.103
+  port: 7273
+  maxHeaderBytes: 1
+  readTimeout: 600s
+  writeTimeout: 600s
