@@ -19,14 +19,14 @@ func main() {
 		Atms []domain.Atm `json:"atms"`
 	}
 
-	atmsFile, err := os.ReadFile("atms.json")
+	atmsFile, err := os.ReadFile("atms_rich.json")
 	if err != nil {
 		log.Panic(err)
 	}
 
 	_ = json.Unmarshal([]byte(atmsFile), &atmsData)
 
-	officesFile, err := os.ReadFile("offices.json")
+	officesFile, err := os.ReadFile("offices_rich.json")
 	if err != nil {
 		log.Panic(err)
 	}

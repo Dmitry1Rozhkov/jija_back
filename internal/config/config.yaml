@@ -1,7 +1,7 @@
 isDebug: true
 corsOrigins: [ "*" ]
 http:
-  host: 192.168.0.103
+  host: 26.202.5.14
   port: 7273
   maxHeaderBytes: 1
   readTimeout: 600s

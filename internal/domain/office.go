@@ -18,6 +18,7 @@ type (
 		Distance            int         `json:"distance"`
 		Kep                 bool        `json:"kep"`
 		MyBranch            bool        `json:"myBranch"`
+		Load                []LoadItem  `json:"load"`
 	}
 
 	OpenHours struct {
@@ -25,3 +26,11 @@ type (
 		Hours string `json:"hours"`
 	}
 )
+
+func (o *Office) GetX() float64 {
+	return o.Latitude
+}
+
+func (o *Office) GetY() float64 {
+	return o.Longitude
+}

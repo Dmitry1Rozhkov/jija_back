@@ -35,13 +35,15 @@ func NewServer(
 	})
 
 	atmsGroup := router.Group("/atms")
+	atmsGroup.GET("", handlers.GetAtmsInfo)
 	{
-		atmsGroup.GET("/", handlers.GetAtmsInfo)
+		atmsGroup.GET("/:x/:y", handlers.GetAtmsNearest)
 	}
 
 	officesGroup := router.Group("/offices")
+	officesGroup.GET("", handlers.GetOfficesInfo)
 	{
-		officesGroup.GET("/", handlers.GetOfficesInfo)
+		officesGroup.GET("/:x/:y", handlers.GetOfficesNearest)
 	}
 
 	return &Server{
@@ -57,12 +59,4 @@ type Server struct {
 
 var allowOriginFunc = func(r *http.Request) bool {
 	return true
-}
-
-type errorResponse struct {
-	Message string `json:"message"`
-}
-
-func newErrorResponse(c *gin.Context, statusCode int, msg string) {
-	c.AbortWithStatusJSON(statusCode, errorResponse{msg})
 }
