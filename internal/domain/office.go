@@ -18,6 +18,7 @@ type (
 		Distance            int         `json:"distance"`
 		Kep                 bool        `json:"kep"`
 		MyBranch            bool        `json:"myBranch"`
+		LoadIndividuals     []LoadItem  `json:"loadIndividuals"`
 		Load                []LoadItem  `json:"load"`
 	}
 

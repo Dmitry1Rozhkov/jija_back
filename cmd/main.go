@@ -24,15 +24,20 @@ func main() {
 		log.Panic(err)
 	}
 
-	_ = json.Unmarshal([]byte(atmsFile), &atmsData)
+	err = json.Unmarshal([]byte(atmsFile), &atmsData)
+	if err != nil {
+		log.Panic(err)
+	}
 
 	officesFile, err := os.ReadFile("offices_rich.json")
 	if err != nil {
 		log.Panic(err)
 	}
 
-	_ = json.Unmarshal([]byte(officesFile), &offices)
-
+	err = json.Unmarshal([]byte(officesFile), &offices)
+	if err != nil {
+		log.Panic(err)
+	}
 	// init config
 	appConfig, err := config.Init("./")
 	if err != nil {
@@ -40,6 +45,7 @@ func main() {
 	}
 
 	fmt.Println(len(atmsData.Atms), len(offices))
+	fmt.Println(len(atmsData.Atms), offices)
 	// init handler
 	handlers := handler.New(appConfig, atmsData.Atms, offices)
 

@@ -27,8 +27,9 @@ type (
 	}
 
 	LoadItem struct {
-		Days  string `json:"days"`
-		Loads []int  `json:"loads"`
+		Day     int      `json:"day"`
+		Loads   [][2]int `json:"loads"`
+		WorkHrs []int    `json:"workHrs"`
 	}
 )
 
