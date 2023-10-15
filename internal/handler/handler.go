@@ -2,7 +2,6 @@ package handler
 
 import (
 	"cmp"
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"jija_back/internal/config"
 	"jija_back/internal/domain"
@@ -68,7 +67,7 @@ func (h *Handler) GetAtmsNearest(c *gin.Context) {
 		return cmp.Compare(a.distance, b.distance)
 	})
 
-	fmt.Println(distancesArray)
+	//fmt.Println(distancesArray)
 
 	for i := 0; i < 50 && i < len(distancesArray); i++ {
 		resultAtms = append(resultAtms, h.atms[distancesArray[i].index])
@@ -109,7 +108,7 @@ func (h *Handler) GetOfficesNearest(c *gin.Context) {
 		return cmp.Compare(a.distance, b.distance)
 	})
 
-	fmt.Println(distancesArray)
+	//fmt.Println(distancesArray)
 
 	for i := 0; i < 50 && i < len(distancesArray); i++ {
 		resultOffices = append(resultOffices, h.offices[distancesArray[i].index])
